@@ -1,0 +1,104 @@
+
+<!-- <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon (click)="this.sideNav.open()"  *ngIf="!sideNav?.opened">menu</mat-icon>
+      <mat-icon (click)="this.sideNav.close()" *ngIf="sideNav?.opened">close</mat-icon>
+  </button>
+    <span>LP News</span>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav">
+        <img class="avatar mat-elavation-z8" src="https://cdn4.vectorstock.com/i/thumb-large/50/08/news-alerts-breaking-logo-tv-design-element-vector-24575008.jpg" alt="">
+        <h4 class="name">Let's Program</h4>
+        <mat-divider></mat-divider>
+
+         <ng-container *ngFor="let source of sources">
+            <button (click)="searchSource(source)" mat-button class="menu-button">
+            <mat-icon>event_note</mat-icon>
+            <span>{{source.name}}</span>
+        </button>
+        </ng-container> 
+
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+        <mat-icon>settings</mat-icon>
+       <a  routerLink="complaints" routerLinkActive="active" > <span class="text-gray-600" >Settings</span> </a> 
+    </button>
+    </mat-sidenav>
+    <mat-sidenav-content class="content mat-elevation-z4">
+        <section class="text-gray-600 bg-gray-100 body-font">
+            <div class="container px-5  mx-auto max-w-7x1">
+                <div class="flex flex-wrap w-full mb-4 p-4">
+                     <div class="w-full mb-6 lg:mb-0">
+                        <h1 class="sm:text-4xl text-5xl font-medium title-font mb-2 text-gray-900">{{selectedNewsChannel}}</h1>
+                        <div class="h-1 w-60 bg-indigo-500 rounded"></div>
+                    </div> 
+                </div>
+                <div class="flex flex-wrap -m-4">
+                     <ng-container *ngFor="let article of articles">
+                        <div class="xl:w-1/3 md:w-1/2 p-4">
+                            <div class="bg-white p-6 rounded-lg">
+                                <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72  rounded w-full object-cover object-center mb-6" [src]="article.urlToImage" alt="Image Size 720x400">
+                                <div class="flex justify-between">
+                                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Author: {{article.author}}</h3>
+                                    <h4 style="text-overflow: ellipsis;
+                                    display: -webkit-box;" class="tracking-widest text-gray-800 text-sm">{{article.publishedAt | date:'medium'}}</h4>
+                                </div>
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-4 overflow-hidden">{{article.title}}</h2>
+                                <p class="leading-relaxed text-base" [innerHtml]="article.description"></p><span><a class="text-blue-500" href="{{article.url}}" target="_blank">read more....</a></span>
+                            </div>
+                        </div>
+                    </ng-container> 
+
+                </div>
+            </div>
+        </section>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+    <mat-toolbar color="primary" class="example-toolbar">
+  
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <span>FarmWeb-Admin</span>
+       
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+       </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container"  [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+            
+                <mat-list-item *ngFor="let item of navbarItems" >
+                  <a matLine [routerLink]="item.link" [ngStyle]="{ color: item.color }">{{ item.label }}</a>
+                </mat-list-item>
+         
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+   
+      
+      
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+
+  
+  
+  <!-- Copyright 2023 Google LLC. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at https://angular.io/license -->

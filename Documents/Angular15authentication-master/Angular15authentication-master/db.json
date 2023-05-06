@@ -1,0 +1,131 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "name": "NT Infotech",
+      "password": "Test$1234",
+      "email": "test@gmail.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true
+    },
+    {
+      "id": "testuser",
+      "name": "Test User",
+      "password": "Test@1234",
+      "email": "test@in.com",
+      "gender": "male",
+      "role": " retail",
+      "isactive": true
+    },
+    {
+      "id": "ntuser",
+      "name": "ramesh",
+      "password": "Test@1234",
+      "email": "te@in.com",
+      "gender": "male",
+      "role": "farm",
+      "isactive": true
+    },
+    {
+      "id": "Nhlamulo",
+      "name": "Reply",
+      "password": "Reply@9705",
+      "email": "shikweni@gmail.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "tech",
+      "name": "Technician"
+    },
+    {
+      "code": "farm",
+      "name": "Farmers"
+    },
+    {
+      "code": "dealer",
+      "name": "Dealers"
+    },
+    {
+      "code": " retail",
+      "name": "Retailer"
+    }
+  ],
+  "menu": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "customer",
+      "name": "Customer"
+    }
+  ],
+  "roleaccess": [
+    {
+      "role": "admin",
+      "menu": "user",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": true
+    },
+    {
+      "role": "user",
+      "menu": "user",
+      "haveedit": false,
+      "haveadd": false,
+      "havedelete": false
+    },
+    {
+      "role": "user",
+      "menu": "customer",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": false
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "nhlamulo",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 2,
+      "name": "bullet",
+      "Creditlimit": 1000
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

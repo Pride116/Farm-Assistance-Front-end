@@ -1,0 +1,44 @@
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a routerLink="/" class="logo d-flex align-items-center">
+        <h1>FarmWeb<span>.</span></h1>
+      </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a routerLink=" " class="active">Home</a></li>
+          <li><a *ngIf="isadmin" [routerLink]="['/user']" >User</a></li>
+          <li><a [routerLink]="['/customer']" >Customer</a></li>
+          <li><a routerLink="/about" routerLinkActive="active" (click)="scrollToSection('about')">About</a></li>
+          <li><a routerLink="/services" routerLinkActive="active" (click)="scrollToSection('services')">Services</a></li>
+          <li><a routerLink="/projects#projects" routerLinkActive="active" (click)="scrollToSection('projects')">Projects</a></li>
+          <li><a routerLink="/blogs#blogs" routerLinkActive="active" (click)="scrollToSection('blogs')">Blog</a></li>
+
+       
+          <li class="dropdown"><a href="#"><span>News</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a routerLink="/contact#contact" routerLinkActive="active" (click)="scrollToSection('contact')">Contact</a></li>
+          <li> <a routerLink="/login" (click)="login()">Login</a></li>
+            <li><a  *ngIf="service.isloggedin()" (click)="onLogout()">Logout</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

@@ -1,0 +1,130 @@
+<!-- <app-navbar></app-navbar> -->
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+      <h2>Customer</h2>
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Customer</li>
+      </ol>
+
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Table customer Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <mat-card>
+        <mat-card-header>
+            <h2>My Customer</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <button (click)="addcustomer()" mat-raised-button color="primary">Add Customer</button>
+                <table mat-table matSort  [dataSource]="dataSource">
+              
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="code">
+                    <th mat-header-cell *matHeaderCellDef> Code </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container  matColumnDef="name">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+              
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="creditlimit">
+                    <th mat-header-cell *matHeaderCellDef> Creditlimit </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Creditlimit}} </td>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">  
+                        <button (click)="updatecustomer(element.id)" mat-raised-button color="primary">Edit</button>
+                        <button (click)="removecustomer(element.id)" mat-raised-button color="accent">Delete</button>
+                    </td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+              
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                               showFirstLastButtons
+                               aria-label="Select page of periodic elements">
+                </mat-paginator>
+              </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </section>
+  <!-- Table customer Section -->
+
+  <!-- ======= Stats Counter Section ======= -->
+  <section id="stats-counter" class="stats-counter section-bg">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-headset color-green flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-people color-pink flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hard Workers</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+      </div>
+
+    </div>
+  </section><!-- End Stats Counter Section -->
+
+
+</main><!-- End #main -->
+
+<!--Footer section-->
+<app-footer></app-footer>
+
+
